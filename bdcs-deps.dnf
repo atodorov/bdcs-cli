@@ -1,0 +1,5 @@
+[bdcs-deps]
+name = BDCS Deps
+baseurl = https://s3.amazonaws.com/weldr/bdcs-deps/
+enabled = 1
+gpgcheck = 0
