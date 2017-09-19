@@ -17,6 +17,13 @@ if [ -z "$START_API_EXTERNALLY" ]; then
     fi
 fi
 
+echo "------ DEBUG -----"
+curl http://api:4000/
+
+curl http://localhost:4000/
+
+
+
 RUNNER="python"
 rpm -q python-nose-parameterized >/dev/null
 if [ $? -eq 0 ]; then
