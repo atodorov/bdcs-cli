@@ -24,6 +24,9 @@ if os.environ.get('START_API_EXTERNALLY'):
     _DEPSOLVE.extend(['--url', 'http://api:4000/'])
 _DEPSOLVE.extend(['recipes', 'depsolve'])
 
+
+print "====== PYTHON DEBUG, DEPSOLVE=", _DEPSOLVE
+
 _RECIPES = []
 for _dirpath, _dirnames, filenames in os.walk(_RECIPE_DIR):
     for _recipe in filenames:
