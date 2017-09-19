@@ -44,7 +44,7 @@ def exec_depsolve(recipe_name):
 
 
 class DepsolveTestCase(unittest.TestCase):
-    @parameterized.expand(_RECIPES)
+    @parameterized.expand(['http-server.toml'])
     def test_depsolve(self, recipe_file):
         recipe = read_toml(recipe_file)
 
