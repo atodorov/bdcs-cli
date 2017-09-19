@@ -38,6 +38,9 @@ test-in-docker: Dockerfile.build
 	# download metadata and run the API backend which provides depsolving
 	[ -f "metadata.db" ] || curl https://s3.amazonaws.com/weldr/metadata.db > metadata.db
 	[ "$(API_CONTAINER_RUNNING)" == "1" ] || sudo docker run -d --rm --name api -p 4000:4000 -v `pwd`:/mddb --security-opt label=disable --network welder welder/bdcs-api-rs:latest
+	echo "******* DEBUG *******"
+	sudo docker ps -a
+	echo "******* END DEBUG *******"
 
 	sudo docker build -t $(ORG_NAME)/bdcs-cli:latest -f $< --cache-from $(ORG_NAME)/bdcs-cli:latest .
 	sudo docker build -t $(ORG_NAME)/bdcs-cli-integration-test:latest -f Dockerfile.integration-test --network welder .
